@@ -31,6 +31,7 @@ import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.html.HtmlWriter;
 import com.vladsch.flexmark.html.IndependentAttributeProviderFactory;
 import com.vladsch.flexmark.html.renderer.AttributablePart;
+import com.vladsch.flexmark.html.renderer.LinkResolverContext;
 import com.vladsch.flexmark.html.renderer.LinkType;
 import com.vladsch.flexmark.html.renderer.NodeRenderer;
 import com.vladsch.flexmark.html.renderer.NodeRendererContext;
@@ -219,7 +220,7 @@ public class MarkdownView extends WebView {
                 .escapeHtml(mEscapeHtml)
                 .attributeProviderFactory(new IndependentAttributeProviderFactory() {
                     @Override
-                    public AttributeProvider create(NodeRendererContext context) {
+                    public AttributeProvider create(LinkResolverContext context) {
                         return new CustomAttributeProvider();
                     }
                 })
