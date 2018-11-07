@@ -1,1 +1,1 @@
-include ':app', ':library', ':emoji'
+include ':app', ':library'
